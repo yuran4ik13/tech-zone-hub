@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | TechZoneHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">TechZoneHub</a>
+
+      <nav class="main-nav">
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="shop.html" data-i18n="nav_shop">Shop</a>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="contact.html" class="active" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch">
+          <button id="lang-en-4" class="lang-btn active">EN</button>
+          <button id="lang-ua" class="lang-btn active">SK</button>
+        </div>
+
+        <button id="cart-btn-4" class="icon-btn" aria-label="Cart">
+          🛒 <span id="cart-count-4" class="cart-count">0</span>
+        </button>
+
+        <button id="menu-toggle-4" class="icon-btn mobile-only">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container contact-top">
+      <h1 data-i18n="contact_title">Contact Us</h1>
+      <p data-i18n="contact_sub">We’re happy to help — send us a message.</p>
+
+      <div class="contact-grid">
+        <form id="contact-form" class="contact-form">
+          <label data-i18n="your_name">Your name</label>
+          <input type="text" id="cf-name" required />
+
+          <label data-i18n="your_email">Your email</label>
+          <input type="email" id="cf-email" required />
+
+          <label data-i18n="message">Message</label>
+          <textarea id="cf-message" rows="6" required></textarea>
+
+          <button type="submit" class="btn" data-i18n="send">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+          <h3 data-i18n="get_in_touch">Get in touch</h3>
+          <p><strong>Email:</strong> support@techzonehub.example</p>
+          <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+          <p data-i18n="office_hours"><strong>Office hours:</strong> Mon–Fri, 9:00–18:00</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>TechZoneHub</strong>
+        <p data-i18n="footer_rights">© 2025 TechZoneHub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart panel -->
+  <div id="cart-panel" class="cart-panel" aria-hidden="true">
+    <div class="cart-header">
+      <h3 data-i18n="cart_title">Your Cart</h3>
+      <button id="cart-close" class="icon-btn">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span data-i18n="total">Total</span>
+        <strong id="cart-total-price">0.00€</strong>
+      </div>
+      <div class="cart-actions">
+        <button id="clear-cart" class="btn btn-outline" data-i18n="clear">Clear</button>
+        <button id="checkout-btn" class="btn" data-i18n="checkout">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
