@@ -3,6 +3,7 @@
 import { ProductCategory, searchProducts } from "@/api/product";
 import { IProductQuickView } from "@/api/types/product";
 import { useEffect, useState } from "react";
+import Product from "../Product/Product";
 
 interface ProductListProps {
   serverProducts: IProductQuickView[];
@@ -78,9 +79,9 @@ export default function ProductList({ serverProducts }: ProductListProps) {
         {isLoading ? (
           <p>Loading...</p>
         ) : products.length ? (
-          products.map((el) => {
-            return <h1 key={el.id}>{el.title}</h1>;
-          })
+          products.map((product) => (
+            <Product key={product.id} product={product} />
+          ))
         ) : (
           <div className="no-products-wrapper">
             <h1>No products</h1>

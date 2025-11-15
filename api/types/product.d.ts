@@ -25,4 +25,5 @@ export interface IProductQuickView {
   slug: string;
   price: number;
   images: IProductImage[];
+  description: string;
 }
