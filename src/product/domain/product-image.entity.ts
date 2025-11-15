@@ -9,6 +9,8 @@ export class ProductImageEntity {
   @Column('text')
   path: string;
 
-  @ManyToOne(() => ProductEntity, (product: ProductEntity) => product.id)
+  @ManyToOne(() => ProductEntity, (product: ProductEntity) => product.images, {
+    onDelete: 'CASCADE',
+  })
   product: ProductEntity;
 }

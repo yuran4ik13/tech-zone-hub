@@ -25,13 +25,15 @@ export class ProductEntity {
 
   @OneToMany(
     () => ProductParamEntity,
-    (productParam: ProductParamEntity) => productParam.id,
+    (productParam: ProductParamEntity) => productParam.product,
+    { cascade: ['insert'] },
   )
   params: ProductParamEntity[];
 
   @OneToMany(
     () => ProductImageEntity,
-    (productImage: ProductImageEntity) => productImage.id,
+    (productImage: ProductImageEntity) => productImage.product,
+    { cascade: ['insert'] },
   )
   images: ProductImageEntity[];
 

@@ -12,6 +12,8 @@ export class ProductParamEntity {
   @Column('text')
   value: string;
 
-  @ManyToOne(() => ProductEntity, (product: ProductEntity) => product.id)
+  @ManyToOne(() => ProductEntity, (product: ProductEntity) => product.params, {
+    onDelete: 'CASCADE',
+  })
   product: ProductEntity;
 }
