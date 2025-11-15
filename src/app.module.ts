@@ -6,6 +6,7 @@ import { config } from './db/ormconfig';
 import { ProductsModule } from './product/product.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { OrdersModule } from './order/order.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { join } from 'path';
       autoLoadEntities: true,
     }),
     ProductsModule,
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
