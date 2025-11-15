@@ -15,12 +15,11 @@ export const config: DataSourceOptions = {
   username: process.env.DB_USERNAME!,
   password: String(process.env.DB_PASSWORD!),
   database: process.env.DB_NAME!,
-  migrations: ['src/database/migrations/*.ts'],
+  migrations: ['dist/database/migrations/*.js'],
   migrationsRun: true,
   migrationsTransactionMode: 'all',
   entities: ['dist/**/*.entity.js'],
-  subscribers: ['dist/**/*.subscriber.js'],
-  logging: process.env.MODE === 'dev',
+  logging: true,
   synchronize: false,
 };
 

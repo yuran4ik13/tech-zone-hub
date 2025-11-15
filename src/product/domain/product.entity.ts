@@ -18,6 +18,9 @@ export class ProductEntity {
   title: string;
 
   @Column('text')
+  slug: string;
+
+  @Column('text')
   description: string;
 
   @OneToMany(
