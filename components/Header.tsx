@@ -29,15 +29,6 @@ export default function Header() {
           </nav>
 
           <div className="header-actions">
-            <div className="lang-switch">
-              <button id="lang-en" className="lang-btn active">
-                EN
-              </button>
-              <button id="lang-sk" className="lang-btn">
-                SK
-              </button>
-            </div>
-
             <button
               onClick={() => setIsOrdersOpen(!isOrdersOpen)}
               className="icon-btn"
