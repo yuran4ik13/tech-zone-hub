@@ -9,6 +9,14 @@ import {
 import { ProductParamEntity } from './product-param.entity';
 import { ProductImageEntity } from './product-image.entity';
 
+export enum ProductCategory {
+  LAPTOP = 'laptop',
+  SMARTPHONE = 'smartphone',
+  HEADPHONE = 'headphone',
+  SMARTWATCH = 'smartwatch',
+  ACCESORY = 'accesory',
+}
+
 @Entity('products')
 export class ProductEntity {
   @PrimaryGeneratedColumn('uuid')
@@ -22,6 +30,9 @@ export class ProductEntity {
 
   @Column('text')
   description: string;
+
+  @Column({ type: 'enum', enum: ProductCategory })
+  category: ProductCategory;
 
   @OneToMany(
     () => ProductParamEntity,

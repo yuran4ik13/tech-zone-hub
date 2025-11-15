@@ -25,15 +25,19 @@ export class ProductsService {
   async create(data: CreateProductDto) {
     const existingProduct = await this.products.findOne({
       where: {
-        slug: slugify(data.title),
+        slug: slugify(data.title, {
+          lower: true,
+        }),
       },
     });
     if (existingProduct)
-      throw new BadRequestException('Produch with same title already exists');
+      throw new BadRequestException('Product with same title already exists');
 
     const product = await this.products.save({
       ...data,
-      slug: slugify(data.title),
+      slug: slugify(data.title, {
+        lower: true,
+      }),
     });
 
     return product;
