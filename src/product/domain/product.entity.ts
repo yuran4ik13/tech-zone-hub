@@ -31,6 +31,11 @@ export class ProductEntity {
   @Column('text')
   description: string;
 
+  @Column({
+    type: Number,
+  })
+  price: number;
+
   @Column({ type: 'enum', enum: ProductCategory })
   category: ProductCategory;
 
